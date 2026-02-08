@@ -37,7 +37,10 @@ open class Logger {
     static var sourceType: LoggerSourceType = .console
     static let queue = OperationQueue()
     
-    static let filePaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("//OBD2Logger.txt") ?? "/OBD2Logger.txt"
+    // Modern Foundation API: URL.documentsDirectory
+    static var logFileURL: URL {
+        return URL.documentsDirectory.appending(path: "OBD2Logger.txt")
+    }
     
     public static func warning(_ message:String) {
         newLog(message, type: .warning)
@@ -62,8 +65,7 @@ open class Logger {
     public static func fileToShare() -> [Any] {
         
         let comment = "Logger file"
-        let fileURL = URL(fileURLWithPath: filePaths)
-        return [comment, fileURL] as [Any]
+        return [comment, logFileURL] as [Any]
         
     }
 
@@ -71,9 +73,9 @@ open class Logger {
     public static func cleanLoggerFile() {
         
         do {
-            try  " ".write(toFile: filePaths, atomically: true, encoding: String.Encoding.utf8)
+            try " ".write(to: logFileURL, atomically: true, encoding: .utf8)
         } catch let error {
-            print("Failed writing to log file: \(filePaths), Error: " + error.localizedDescription)
+            print("Failed writing to log file: \(logFileURL), Error: " + error.localizedDescription)
         }
     }
     
@@ -86,15 +88,20 @@ open class Logger {
             let log = "[\(Date().description)] [\(type)] \(message)"
 
             var content = ""
-            if FileManager.default.fileExists(atPath: filePaths) {
-                content =  try! String(contentsOfFile: filePaths, encoding: String.Encoding.utf8)
+            // Avoid force try
+            if FileManager.default.fileExists(atPath: logFileURL.path) {
+                do {
+                    content = try String(contentsOf: logFileURL, encoding: .utf8)
+                } catch {
+                    print("Failed to read log file: \(error.localizedDescription)")
+                }
             }
             
             do {
-                try  "\(content)\n\(log)".write(toFile: filePaths, atomically: true, encoding: String.Encoding.utf8)
+                try "\(content)\n\(log)".write(to: logFileURL, atomically: true, encoding: .utf8)
                 
             } catch let error {
-                print("Failed writing to log file: \(filePaths), Error: " + error.localizedDescription)
+                print("Failed writing to log file: \(logFileURL), Error: " + error.localizedDescription)
             }
             
         }

@@ -34,34 +34,34 @@ public class Mode03Descriptor : DescriptorProtocol {
     
     var codes = [String]()
     
-    for i in 0..<data.count where i % 2 == 0 {
+    // Modern Swift: stride instead of C-style loop where possible, but here logic is specific
+    // Using simple loop with step 2
+    for i in stride(from: 0, to: data.count - 1, by: 2) {
       let codeIndex = Int(data[i] >> 6)
       
       //Out of range
-      guard codeIndex <= 4 else {break}
+      guard codeIndex < systemCode.count else { break }
       
       let c1 = systemCode[codeIndex]
       let a2 = Int(data[i] & DTC_DIGIT_0_1_MASK)
       let a3 = Int(data[i+1] & DTC_DIGIT_2_3_MASK)
       
-      let c2 = String(format: "%02d", a2)
-      let c3 = String(format: "%02d", a3)
+      // AGENTS.md: Never use C-style number formatting like String(format: "%02d", ...)
+      // We manually pad with 0 if < 10 since the range is limited to 2 digits for DTC.
+
+      let c2 = a2 < 10 ? "0\(a2)" : "\(a2)"
+      let c3 = a3 < 10 ? "0\(a3)" : "\(a3)"
       
       let code = "\(c1)\(c2)\(c3)"
       
       codes.append(code)
-      
-      if (data.count - (i+2)) < 2 &&
-        (data.count - (i+2)) % 2 != 0 {
-        break
-      }
     }
     
     return codes
   }
   
   public func isMILActive() -> Bool {
-    return calcMILActive(data: response.rawData)
+      return OBD2Calculator.calcMILActive(data: response.rawData)
   }
   
   public func troubleCodeCount() -> Int {
