@@ -83,7 +83,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F),
     
     //MARK:- PID 0x05
@@ -96,8 +96,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "˚F",
                      -40,
                      419,
-                     calcTemp,
-                     convertTemp),
+                     OBD2Calculator.calcTemp,
+                     OBD2Calculator.convertTemp),
     
     //MARK:- PID 0x06
     SensorDescriptor(0x06,
@@ -109,7 +109,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcFuelTrimPercentage,
+                     OBD2Calculator.calcFuelTrimPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x07
@@ -122,7 +122,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcFuelTrimPercentage,
+                     OBD2Calculator.calcFuelTrimPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x08
@@ -135,7 +135,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcFuelTrimPercentage,
+                     OBD2Calculator.calcFuelTrimPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x09
@@ -148,7 +148,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcFuelTrimPercentage,
+                     OBD2Calculator.calcFuelTrimPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x0A
@@ -162,7 +162,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      0,
                      222,
                      VOID,
-                     convertPressure ),
+                     OBD2Calculator.convertPressure ),
     
     //MARK:- PID 0x0B
     SensorDescriptor(0x0B,
@@ -173,8 +173,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "inHg",
                      0,
                      74,
-                     calcInt,
-                     convertPressure ),
+                     OBD2Calculator.calcInt,
+                     OBD2Calculator.convertPressure ),
     
     //MARK:- PID 0x0C
     SensorDescriptor(0x0C,
@@ -186,7 +186,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcEngineRPM,
+                     OBD2Calculator.calcEngineRPM,
                      VOID_F ),
     
     //MARK:- PID 0x0D
@@ -199,8 +199,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "MPH",
                      0,
                      159,
-                     calcInt,
-                     convertSpeed ),
+                     OBD2Calculator.calcInt,
+                     OBD2Calculator.convertSpeed ),
     
     //MARK:- PID 0x0E
     SensorDescriptor(0x0E,
@@ -212,7 +212,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcTimingAdvance,
+                     OBD2Calculator.calcTimingAdvance,
                      VOID_F ),
     
     //MARK:- PID 0x0F
@@ -225,8 +225,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "F",
                      -40,
                      419,
-                     calcTemp,
-                     convertTemp ),
+                     OBD2Calculator.calcTemp,
+                     OBD2Calculator.convertTemp ),
     
     //MARK:- PID 0x10
     SensorDescriptor(0x10,
@@ -238,8 +238,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "lbs/min",
                      0,
                      87,
-                     calcMassAirFlow,
-                     convertAir ),
+                     OBD2Calculator.calcMassAirFlow,
+                     OBD2Calculator.convertAir ),
     
     //MARK:- PID 0x11
     SensorDescriptor(0x11,
@@ -251,7 +251,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x12
@@ -278,7 +278,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F),
     
     //MARK:- PID 0x15
@@ -291,7 +291,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x16
@@ -304,7 +304,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x17
@@ -317,7 +317,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x18
@@ -330,7 +330,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     
@@ -344,7 +344,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x1A
@@ -357,7 +357,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x1B
@@ -370,7 +370,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcOxygenSensorVoltage,
+                     OBD2Calculator.calcOxygenSensorVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x1C
@@ -404,7 +404,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcTime,
+                     OBD2Calculator.calcTime,
                      VOID_F ),
     
     //MARK:- PID 0x20
@@ -427,8 +427,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "miles",
                      0,
                      40717,
-                     calcDistance,
-                     convertDistance ),
+                     OBD2Calculator.calcDistance,
+                     OBD2Calculator.convertDistance ),
     
     //MARK:- PID 0x22
     SensorDescriptor(0x22,
@@ -440,8 +440,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "inHg",
                      0,
                      1502,
-                     calcPressure,
-                     convertPressure),
+                     OBD2Calculator.calcPressure,
+                     OBD2Calculator.convertPressure),
     
     //MARK:- PID 0x23
     SensorDescriptor(0x23,
@@ -453,59 +453,59 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "inHg",
                      0,
                      190052,
-                     calcPressureDiesel,
-                     convertPressure ),
+                     OBD2Calculator.calcPressureDiesel,
+                     OBD2Calculator.convertPressure ),
     
     //MARK:- PID 0x24
     SensorDescriptor(0x24,
                      "Equivalence Ratio: O2S1",
                      "R O2S1",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x25
     SensorDescriptor(0x25,
                      "Equivalence Ratio: O2S2",
                      "R O2S2",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x26
     SensorDescriptor(0x26,
                      "Equivalence Ratio: O2S3",
                      "R O2S3",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x27
     SensorDescriptor(0x27,
                      "Equivalence Ratio: O2S4", "R O2S4",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x28
     SensorDescriptor(0x28,
                      "Equivalence Ratio: O2S5", "R O2S5",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x29
     SensorDescriptor(0x29,
                      "Equivalence Ratio: O2S6", "R O2S6",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x2A
     SensorDescriptor(0x2A,
                      "Equivalence Ratio: O2S7", "R O2S7",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x2B
     SensorDescriptor(0x2B,
                      "Equivalence Ratio: O2S8", "R O2S8",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x2C
     SensorDescriptor(0x2C,
@@ -517,7 +517,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x2D
@@ -528,7 +528,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcEGRError,
+                     OBD2Calculator.calcEGRError,
                      VOID_F ),
     
     //MARK:- PID 0x2E
@@ -541,7 +541,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x2F
@@ -554,7 +554,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x30
@@ -565,7 +565,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      0,
                      255,
                      NULL, INT_MAX, INT_MAX,
-                     calcInt,
+                     OBD2Calculator.calcInt,
                      VOID_F ),
     
     //MARK:- PID 0x31
@@ -577,8 +577,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "miles",
                      0,
                      40717,
-                     calcDistance,
-                     convertDistance),
+                     OBD2Calculator.calcDistance,
+                     OBD2Calculator.convertDistance),
     
     //MARK:- PID 0x32
     SensorDescriptor(0x32,
@@ -590,8 +590,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "inHg",
                      -3,
                      3,
-                     calcVaporPressure,
-                     convertPressure2 ),
+                     OBD2Calculator.calcVaporPressure,
+                     OBD2Calculator.convertPressure2 ),
     
     //MARK:- PID 0x33
     SensorDescriptor(0x33,
@@ -603,8 +603,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "inHg",
                      0,
                      76,
-                     calcInt,
-                     convertPressure ),
+                     OBD2Calculator.calcInt,
+                     OBD2Calculator.convertPressure ),
     
     //MARK:- PID 0x34
     SensorDescriptor(0x34,
@@ -612,7 +612,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "R O2S1",
                      "", 0, 2,
                      NULL, INT_MAX, INT_MAX,
-                     calcEquivalenceRatio,
+                     OBD2Calculator.calcEquivalenceRatio,
                      VOID_F ),
     
     //MARK:- PID 0x35
@@ -621,7 +621,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "R O2S2",
                      "", 0, 2,
                      NULL, INT_MAX, INT_MAX,
-                     calcEquivalenceRatio,
+                     OBD2Calculator.calcEquivalenceRatio,
                      VOID_F ),
     
     //MARK:- PID 0x36
@@ -630,7 +630,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "R O2S3",
                      "", 0, 2,
                      NULL, INT_MAX, INT_MAX,
-                     calcEquivalenceRatio,
+                     OBD2Calculator.calcEquivalenceRatio,
                      VOID_F ),
     
     //MARK:- PID 0x37
@@ -639,7 +639,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "R O2S4",
                      "", 0, 2,
                      NULL, INT_MAX, INT_MAX,
-                     calcEquivalenceRatio,
+                     OBD2Calculator.calcEquivalenceRatio,
                      VOID_F ),
     
     //MARK:- PID 0x38
@@ -647,28 +647,28 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "Equivalence Ratio: O2S5",
                      "R O2S5",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x39
     SensorDescriptor(0x39,
                      "Equivalence Ratio: O2S6",
                      "R O2S6",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x3A
     SensorDescriptor(0x3A,
                      "Equivalence Ratio: O2S7",
                      "R O2S7",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     //MARK:- PID 0x3B
     SensorDescriptor(0x3B,
                      "Equivalence Ratio: O2S8",
                      "R O2S8",
                      "", 0, 2,
-                     NULL, INT_MAX, INT_MAX, calcEquivalenceRatio, VOID_F ),
+                     NULL, INT_MAX, INT_MAX, OBD2Calculator.calcEquivalenceRatio, VOID_F ),
     
     
     //MARK:- PID 0x3C
@@ -681,8 +681,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "F",
                      -40,
                      11694,
-                     calcCatalystTemp,
-                     convertTemp ),
+                     OBD2Calculator.calcCatalystTemp,
+                     OBD2Calculator.convertTemp ),
     
     //MARK:- PID 0x3D
     SensorDescriptor(0x3D,
@@ -694,8 +694,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "F",
                      -40,
                      11694,
-                     calcCatalystTemp,
-                     convertTemp ),
+                     OBD2Calculator.calcCatalystTemp,
+                     OBD2Calculator.convertTemp ),
     
     //MARK:- PID 0x3E
     SensorDescriptor(0x3E,
@@ -706,8 +706,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "F",
                      -40,
                      11694,
-                     calcCatalystTemp,
-                     convertTemp ),
+                     OBD2Calculator.calcCatalystTemp,
+                     OBD2Calculator.convertTemp ),
     
     //MARK:- PID 0x3F
     SensorDescriptor(0x3F,
@@ -719,8 +719,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "F",
                      -40,
                      11694,
-                     calcCatalystTemp,
-                     convertTemp ),
+                     OBD2Calculator.calcCatalystTemp,
+                     OBD2Calculator.convertTemp ),
     
     
     //MARK:- PID 0x40
@@ -744,7 +744,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      0,
                      66,
                      NULL, INT_MAX, INT_MAX,
-                     calcControlModuleVoltage,
+                     OBD2Calculator.calcControlModuleVoltage,
                      VOID_F ),
     
     //MARK:- PID 0x43
@@ -755,7 +755,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      0,
                      25700,
                      NULL, INT_MAX, INT_MAX,
-                     calcAbsoluteLoadValue,
+                     OBD2Calculator.calcAbsoluteLoadValue,
                      VOID_F ),
     
     //MARK:- PID 0x44
@@ -768,7 +768,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcEquivalenceRatio,
+                     OBD2Calculator.calcEquivalenceRatio,
                      VOID_F),
     
     //MARK:- PID 0x45
@@ -781,7 +781,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage, VOID_F ),
+                     OBD2Calculator.calcPercentage, VOID_F ),
     
     //MARK:- PID 0x46
     SensorDescriptor(0x46,
@@ -793,8 +793,8 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "F",
                      -104,
                      355,
-                     calcTemp,
-                     convertTemp ),
+                     OBD2Calculator.calcTemp,
+                     OBD2Calculator.convertTemp ),
     
     //MARK:- PID 0x47
     SensorDescriptor(0x47,
@@ -806,7 +806,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x48
@@ -816,7 +816,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "%",
                      0,100,
                      NULL, INT_MAX, INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x49
@@ -826,7 +826,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "%",
                      0, 100,
                      NULL, INT_MAX, INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x4A
@@ -836,7 +836,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "%",
                      0, 100,
                      NULL, INT_MAX, INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x4B
@@ -846,7 +846,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "%",
                      0, 100,
                      NULL, INT_MAX, INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x4C
@@ -855,7 +855,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      "Cmd Throttle Act", "%",
                      0, 100,
                      NULL, INT_MAX, INT_MAX,
-                     calcPercentage,
+                     OBD2Calculator.calcPercentage,
                      VOID_F ),
     
     //MARK:- PID 0x4D
@@ -868,7 +868,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcTime,
+                     OBD2Calculator.calcTime,
                      VOID_F ),
     
     //MARK:- PID 0x4E
@@ -881,7 +881,7 @@ let SensorDescriptorTable : [SensorDescriptor] = [
                      NULL,
                      INT_MAX,
                      INT_MAX,
-                     calcTime,
+                     OBD2Calculator.calcTime,
                      VOID_F )
 ]
 

@@ -21,7 +21,7 @@ public typealias StateChangeCallback = (_ state: ScanState) -> ()
 
 class `Scanner`: StreamHolder {
     
-    typealias CallBack = (Bool, Error?) -> ()
+    typealias CallBack = (Result<Bool, Error>) -> ()
     
     
     var defaultSensors: [UInt8] = [0x0C, 0x0D]
@@ -141,12 +141,12 @@ class `Scanner`: StreamHolder {
         
         initOperation.completionBlock = { [weak self] in
             if let error = initOperation.error {
-                callback(false, error)
+                callback(.failure(error))
                 self?.state = .none
                 self?.obdQueue.cancelAllOperations()
             } else {
                 self?.state = .connected
-                callback(true, nil)
+                callback(.success(true))
             }
         }
         
